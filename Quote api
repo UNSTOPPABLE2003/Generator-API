@@ -1,0 +1,18 @@
+const express = require("express");
+const app = express();
+const port = 5000;
+
+const quotes = [
+  "Stay hungry, stay foolish.",
+  "The best way to predict the future is to invent it.",
+  "Code is like humor. When you have to explain it, it’s bad.",
+];
+
+app.get("/quote", (req, res) => {
+  const random = quotes[Math.floor(Math.random() * quotes.length)];
+  res.json({ quote: random });
+});
+
+app.listen(port, () => {
+  console.log(`Quote API running on http://localhost:${port}`);
+});
