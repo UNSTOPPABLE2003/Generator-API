@@ -1,0 +1,5 @@
+app.get("/quote", (req, res) => {
+  const random = quotes[Math.floor(Math.random() * quotes.length)];
+  res.json({ quote: random });
+});
+
